@@ -1,0 +1,14 @@
+<%- include layouts/header.ejs%>
+<section id="projects" class="projects-section bg-light">
+    <h6>Ultima confirmacion</h6>
+<h4><%=total %></h4>
+<form action="https://sandbox.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_xclick"/>
+    <input type="hidden" name="business" value="alex_espinosa97-facilitator@hotmail.com"/>
+    <input type="hidden" name="currency_code" value="MXN"/>
+<input type="hidden" name="item_name" value="compra"/>
+    <input type="hidden" name="amount" value="<%=total %>" />
+    <input type="submit" value="Comprar"/>
+  </form>
+</section>
+<%- include layouts/fooder.ejs%>

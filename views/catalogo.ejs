@@ -1,0 +1,41 @@
+   <!-- Projects Section -->
+   <%- include layouts/header.ejs%>
+   <section id="projects" class="projects-section bg-light">
+    <div class="container">
+      <% for(var i=0;i<libros.length;i++){ %>  
+          <form method="post" action="/add_cart">
+      <!-- Featured Project Row -->
+      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+        <div class="col-xl-8 col-lg-7">
+          <img width="70%"  class="img-fluid mb-3 mb-lg-0" src="front/img/<%= libros[i].imagen %>" alt="">
+        </div>
+        <div class="col-xl-4 col-lg-5">
+          <div class="featured-text text-center text-lg-left">
+            <h4  name="titulo" ><%=libros[i].titulo%></h4>
+            <p   class="text-black-50 mb-0" ><%=libros[i].descripcion%></p>
+            <p class="text-black-50 mb-0" name="$<%=libros[i].precio%>" >Precio:$<%=libros[i].precio%></p>
+            <input class="btn btn-danger producto"   name="id"  type="hidden" value="<%=libros[i].id%>">
+
+            <input class="btn btn-danger producto"    type="submit" value="Comprar">
+          <a href="" id="btn" class="btn btn-danger producto"id="producto" onclick="ptm" role="button" precio="12" titulo="tumama"  >Ver detalles</a>
+ 
+        </div>
+        </div>
+      </div>
+      </form>
+      <% } %> 
+ 
+    
+    </div>
+  </section>
+ 
+	<script>
+$(document).ready(function() {
+    $("#demos").click(function(){
+        alertify.alert('hola mundo'); 
+    });
+});
+
+
+	</script>
+  <%- include layouts/fooder.ejs%>
